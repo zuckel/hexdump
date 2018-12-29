@@ -1,0 +1,10 @@
+/target/
+
+# eclipse
+/.classpath
+/.project
+/.settings/
+
+# netbeans
+/nbproject/
+/nb-configuration.xml
