@@ -2,6 +2,7 @@ package org.lasinger.tools.hexdump;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.lasinger.tools.hexdump.Hexdump.hexdump;
 
 import java.util.ArrayList;
@@ -20,6 +21,11 @@ public class HexdumpTest {
                 "/nbproject/\n" + //
                 "/nb-configuration.xml";
         System.out.println(hexdump(in.getBytes(UTF_8)));
+    }
+
+    @Test
+    public void nullThrows() throws Exception {
+        assertThatThrownBy(() -> hexdump(null)).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
