@@ -1,4 +1,4 @@
-# Hexdump
+# Hexdump [![Build Status](https://travis-ci.org/zuckel/hexdump.svg?branch=master)](https://travis-ci.org/zuckel/hexdump)
 This repo implements a simple hexdump, similar in output to `hexdump -C` of BSD hexdump. It will transform a byte[] to a String.
 
 ## Usage
