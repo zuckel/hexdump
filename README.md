@@ -7,7 +7,7 @@ This repo implements a simple hexdump, similar in output to `hexdump -C` of BSD 
 
 ## GAV
 ```
-org.lasinger.tools:hexdump:$VERSION
+org.lasinger.tools:hexdump:0.1.0
 ```
 
 ## Usage
