@@ -1,13 +1,14 @@
 # Hexdump
 [![Build Status](https://travis-ci.org/zuckel/hexdump.svg?branch=master)](https://travis-ci.org/zuckel/hexdump)
 [![codecov](https://codecov.io/gh/zuckel/hexdump/branch/master/graph/badge.svg)](https://codecov.io/gh/zuckel/hexdump)
-
+[![Latest release](https://img.shields.io/github/release/zuckel/hexdump.svg)](https://github.com/zuckel/hexdump/releases/latest)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.lasinger.tools/hexdump/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.lasinger.tools/hexdump)
 
 This repo implements a simple hexdump, similar in output to `hexdump -C` of BSD hexdump. It will transform a byte[] to a String.
 
 ## GAV
 ```
-org.lasinger.tools:hexdump:0.1.0
+org.lasinger.tools:hexdump:VERSION
 ```
 
 ## Usage
