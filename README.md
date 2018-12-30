@@ -5,6 +5,11 @@
 
 This repo implements a simple hexdump, similar in output to `hexdump -C` of BSD hexdump. It will transform a byte[] to a String.
 
+## GAV
+```
+org.lasinger.tools:hexdump:$VERSION
+```
+
 ## Usage
 The interface is a single static method in `org.lasinger.tools.hexdump.Hexdump`.
 
