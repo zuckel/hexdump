@@ -59,14 +59,7 @@
     <profiles>
 
         <profile>
-            <id>travis-only</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-                <property>
-                    <name>${env.TRAVIS}</name>
-                    <value>true</value>
-                </property>
-            </activation>
+            <id>travis</id>
             <build>
                 <plugins>
                     <plugin>
@@ -85,14 +78,7 @@
         </profile>
 
         <profile>
-            <id>release-only</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-                <property>
-                    <name>performRelease</name>
-                    <value>true</value>
-                </property>
-            </activation>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
