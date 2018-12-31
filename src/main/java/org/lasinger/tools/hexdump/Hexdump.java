@@ -3,7 +3,7 @@ package org.lasinger.tools.hexdump;
 /**
  * Utility class for generating hexdumps from byte arrays. Mostly for debugging purposes.
  */
-public class Hexdump {
+public final class Hexdump {
 
     private static final char[] HEX =
             new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', };

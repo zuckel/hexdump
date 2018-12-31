@@ -1,6 +1,7 @@
 package org.lasinger.tools.hexdump;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static net.trajano.commons.testing.UtilityClassTestUtil.assertUtilityClassWellDefined;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.lasinger.tools.hexdump.Hexdump.hexdump;
@@ -11,6 +12,11 @@ import java.util.List;
 import org.junit.Test;
 
 public class HexdumpTest {
+
+    @Test
+    public void utilityClass() throws Exception {
+        assertUtilityClassWellDefined(Hexdump.class);
+    }
 
     @Test
     public void example_gitignore() throws Exception {
