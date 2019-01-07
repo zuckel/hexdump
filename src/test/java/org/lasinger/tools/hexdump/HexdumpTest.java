@@ -3,14 +3,12 @@ package org.lasinger.tools.hexdump;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static net.trajano.commons.testing.UtilityClassTestUtil.assertUtilityClassWellDefined;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.lasinger.tools.hexdump.Hexdump.hexdump;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-
 
 public class HexdumpTest {
 
@@ -31,13 +29,13 @@ public class HexdumpTest {
     }
 
     @Test
-    public void nullThrows() throws Exception {
-        assertThatThrownBy(() -> hexdump(null)).isInstanceOf(IllegalArgumentException.class);
+    public void nullBytes() throws Exception {
+        assertThat(hexdump(null)).isEqualTo("null");
     }
 
     @Test
-    public void empty() throws Exception {
-        assertThat(hexdump(new byte[0])).isEqualTo("");
+    public void noBytes() throws Exception {
+        assertThat(hexdump(new byte[0])).isEqualTo("empty");
     }
 
     @Test

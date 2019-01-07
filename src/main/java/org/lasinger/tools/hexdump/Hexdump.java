@@ -16,23 +16,19 @@ public final class Hexdump {
      * Create human-readable hexdump for a byte array.
      * </p>
      * <p>
-     * The input may not be null. An empty byte array will produce an empty String.
-     * </p>
-     * <p>
      * This method is not thread-safe in the sense that bytes will be read more than once, thus possibly producing inconsistent
      * output if the byte array is mutated concurrently.
      * </p>
      *
      * @param bytes array to be rendered
      * @return human-readable formatted hexdump as a String
-     * @throws IllegalArgumentException if bytes is null
      */
     public static String hexdump(byte[] bytes) {
         if (bytes == null) {
-            throw new IllegalArgumentException("byte array may not be null");
+            return "null";
         }
         if (bytes.length == 0) {
-            return "";
+            return "empty";
         }
 
         StringBuilder out = new StringBuilder();
