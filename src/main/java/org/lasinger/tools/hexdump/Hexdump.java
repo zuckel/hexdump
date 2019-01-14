@@ -8,6 +8,8 @@ public final class Hexdump {
     private static final char[] HEX =
             new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', };
 
+    public static final char NON_PRINTABLE = '\u25a1'; // WHITE SQUARE □
+
     private Hexdump() {
     }
 
@@ -115,7 +117,7 @@ public final class Hexdump {
             out.append('\u00a4'); // CR ¤
             break;
         default:
-            out.append((32 <= b && b <= 126) ? (char) b : '\u00b7'); // ' ' to '~', non-printable is MEDIUM DOT ·
+            out.append((32 <= b && b <= 126) ? (char) b : NON_PRINTABLE); // ' ' to '~', non-printable is WHITE SQUARE □
         }
 
     }

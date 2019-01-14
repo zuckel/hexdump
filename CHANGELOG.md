@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Return "empty" on empty input and "null" on null input as the output should be human-readable.
+- Return "empty" on empty input and "null" on null input as all output should be human-readable.
+- Change non-printable byte representation for better distinction from dot.
 
 ## [0.1.0] - 2018-12-30
 ### Added

@@ -71,7 +71,7 @@ public class HexdumpTest {
         String dump = hexdump(new byte[] { 0x09, 0x20, 0x20, 0x0D, 0x0A, 0x2E, 0x00 });
 
         System.out.println(dump);
-        assertThat(dump).startsWith("00000000  09 20 20 0d 0a 2e 00                              |→␣␣¤¶.·|");
+        assertThat(dump).startsWith("00000000  09 20 20 0d 0a 2e 00                              |→␣␣¤¶.□|");
     }
 
     @Test
@@ -79,7 +79,7 @@ public class HexdumpTest {
         String dump = hexdump(new byte[] { 0x00, Byte.MIN_VALUE, Byte.MAX_VALUE, (byte) 255 });
 
         System.out.println(dump);
-        assertThat(dump).startsWith("00000000  00 80 7f ff                                       |····|");
+        assertThat(dump).startsWith("00000000  00 80 7f ff                                       |□□□□|");
     }
 
     @Test
@@ -116,7 +116,7 @@ public class HexdumpTest {
         String printableAscii = in.replace(nonAscii, "");
         assertThat(codepointList(dump)).containsAll(codepointList(printableAscii));
         assertThat(codepointList(dump)).doesNotContainAnyElementsOf(codepointList(nonAscii));
-        assertThat(dump).contains("ABC-········-X");
+        assertThat(dump).contains("ABC-□□□□□□□□-X");
     }
 
     // this test currently has no assertion. it is for visual output only.
