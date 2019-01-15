@@ -20,8 +20,8 @@ public static String hexdump(byte[])
 
 ## Output
 There are minor deviations from BSD hexdump:
-- ascii control bytes TAB, LF, CR, SP are output as readable unicode characters
-- other non-printable ascii bytes are output as WHITE SQUARE
+- ascii control bytes TAB, LF, CR, SP are output as readable unicode characters ( → ¶ ¤ ␣ )
+- other non-printable ascii bytes are output as WHITE SQUARE ( □ )
 
 ```
 00000000  00 01 02 03 04 05 06 07  08 09 0a 0b 0c 0d 0e 0f  |□□□□□□□□□→¶□□¤□□|
