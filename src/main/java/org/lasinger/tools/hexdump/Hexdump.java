@@ -44,6 +44,8 @@ public final class Hexdump {
         return out.toString();
     }
 
+    // 00000000  2f 2e 63 6c 61 73 73 70  61 74 68 0a 2f 2e 70 72  |/.classpath¶/.pr|
+    //   offset              first block             second block  |    displayChars|
     private static void appendLine(byte[] bytes, int firstBlockStart, StringBuilder out) {
         int firstBlockEnd = Math.min(bytes.length, firstBlockStart + 8);
         int secondBlockEnd = Math.min(bytes.length, firstBlockStart + 16);
@@ -65,12 +67,12 @@ public final class Hexdump {
         out.append('\n');
     }
 
-    private static void appendOffset(int offset, StringBuilder out) {
-        int x = offset;
-        for (int i = 0; i < 4; i++) {
-            x = Integer.rotateLeft(x, 8);
-            Hexdump.appendHexChars((byte) (x & 0xFF), out);
-        }
+    // visible for testing
+    static void appendOffset(int offset, StringBuilder out) {
+        appendHexChars((byte) ((offset & 0xFF000000) >> 24), out);
+        appendHexChars((byte) ((offset & 0x00FF0000) >> 16), out);
+        appendHexChars((byte) ((offset & 0x0000FF00) >> 8), out);
+        appendHexChars((byte) ((offset & 0x000000FF) >> 0), out);
     }
 
     private static void appendHexBytes(byte[] bytes, int offset, int limit, StringBuilder out) {

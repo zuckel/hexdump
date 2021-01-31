@@ -7,6 +7,7 @@ import static org.lasinger.tools.hexdump.Hexdump.hexdump;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +18,7 @@ public class HexdumpTest {
         assertUtilityClassWellDefined(Hexdump.class);
     }
 
+    // this test currently has no assertion. it is for visual output only.
     @Test
     public void example_gitignore() throws Exception {
         String in = "/.classpath\n" + //
@@ -131,6 +133,19 @@ public class HexdumpTest {
 
     private List<Integer> codepointList(String string) {
         return string.codePoints().collect(ArrayList::new, List::add, List::addAll);
+    }
+
+    @Test
+    public void testOffset() throws Exception {
+        Function<Integer, String> f = offset -> {
+            StringBuilder sb = new StringBuilder();
+            Hexdump.appendOffset(offset, sb);
+            return sb.toString();
+        };
+        assertThat(f.apply(0)).isEqualTo("00000000");
+        assertThat(f.apply(13)).isEqualTo("0000000d");
+        assertThat(f.apply(256)).isEqualTo("00000100");
+        assertThat(f.apply(0xFEDCBA98)).isEqualTo("fedcba98");
     }
 
 }
